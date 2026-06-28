@@ -12,3 +12,22 @@ export function getProducts() {
     return data.products;
   });
 }
+export function getProductsByCategory(category) {
+  return axios
+    .get(`${API_ENDPOINTS.PRODUCTS_BY_CATEGORY}${category}`)
+    .then(({ data }) => {
+      return data;
+    });
+}
+export function getProductById(id) {
+  return axios.get(`${API_ENDPOINTS.PRODUCT_BY_ID}${id}`).then(({ data }) => {
+    return data;
+  });
+}
+export function getProductBySearchValue(searchValue) {
+  return axios
+    .get(`${API_ENDPOINTS.PRODUCT_BY_SEARCH}?q=${searchValue}`)
+    .then(({ data }) => {
+      return data;
+    });
+}
